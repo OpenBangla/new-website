@@ -13,7 +13,7 @@ export default function Hero() {
               Open Source • Cross Platform
             </h4>
 
-            <h1 className="leading-14 max-w-2xl pt-4 pb-5 font-bricolage-grotesque font-extrabold text-5xl text-[#202020]">
+            <h1 className="max-w-2xl pt-4 pb-5 font-bricolage-grotesque font-extrabold text-5xl text-[#202020] leading-14">
               The Last{" "}
               <span className="bg-linear-to-r from-[#0D8C5E] to-[#06402A] bg-clip-text text-transparent">
                 Bangla writing solution
@@ -21,7 +21,7 @@ export default function Hero() {
               you'll ever need!
             </h1>
 
-            <p className="max-w-xl font-medium pb-12 text-[#5D5D5D] text-xl leading-8">
+            <p className="max-w-xl pb-12 font-medium text-[#5D5D5D] text-xl leading-8">
               Fast, smart Bangla typing with phonetic and fixed layouts
               Available on
               <span className="font-bold"> Linux, Windows, and macOS.</span>

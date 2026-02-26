@@ -6,12 +6,16 @@ interface FeatureCardProps {
   description: string;
 }
 
-export default function FeatureCard({ icon, title, description }: FeatureCardProps) {
+export default function FeatureCard({
+  icon,
+  title,
+  description,
+}: FeatureCardProps) {
   return (
-    <Flex className="shadow-sm border border-[#06402B]/8 py-8 rounded-3xl bg-white flex-col gap-6">
+    <Flex className="flex-col gap-6 rounded-3xl border border-[#06402B]/8 bg-white py-8 shadow-sm">
       <div>{icon}</div>
-      <Flex className="flex-col items-center text-center text-lg max-w-[255px] gap-5">
-        <h3 className="font-bold leading-8 text-[#202020]">{title}</h3>
+      <Flex className="max-w-[255px] flex-col items-center gap-5 text-center text-lg">
+        <h3 className="font-bold text-[#202020] leading-8">{title}</h3>
         <p className="text-[#5D5D5D] leading-6">{description}</p>
       </Flex>
     </Flex>
