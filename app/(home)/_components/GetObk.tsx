@@ -25,7 +25,7 @@ const GET_OBK = [
   },
 ];
 
-export function GetObk() {
+export default function GetObk() {
   return (
     <section className="bg-[#FBFDFC] pt-20 pb-32">
       <Container>
