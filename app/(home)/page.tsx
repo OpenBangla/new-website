@@ -3,6 +3,7 @@ import Capabilities from "./_components/Capabilities";
 import Features from "./_components/Features";
 import GetObk from "./_components/GetObk";
 import Hero from "./_components/Hero";
+import Footer from "./_components/Footer";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Capabilities />
       <GetObk />
       <Blogs />
+      <Footer />
     </>
   );
 }
