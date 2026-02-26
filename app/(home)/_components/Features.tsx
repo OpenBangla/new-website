@@ -56,12 +56,12 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section className="bg-[#FBFDFC] pt-20 pb-32">
+    <section className="bg-slate-50 pt-16 pb-24 md:pt-20 md:pb-32 dark:bg-zinc-950">
       <Container>
-        <h2 className="mx-auto max-w-md text-center font-bold font-bricolage-grotesque text-4xl">
+        <h2 className="mx-auto max-w-md text-center font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
           Everything You Need to Type Bangla
         </h2>
-        <div className="grid grid-cols-3 gap-6 pt-16">
+        <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-2 md:pt-16 lg:grid-cols-3">
           {FEATURES.map((feature) => (
             <FeatureCard
               key={feature.title}

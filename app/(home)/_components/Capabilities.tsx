@@ -38,27 +38,28 @@ export default function Capabilities() {
   return (
     <section className="py-20">
       <Container>
-        <Flex className="justify-between">
-          <div>
+        <Flex className="flex-col justify-between gap-12 lg:flex-row lg:gap-16">
+          <div className="flex w-full justify-center lg:block lg:w-1/2">
             <Image
-              src="https://placehold.co/500x500"
+              src="https://placehold.co/500x500/e2e8f0/475569"
               alt="placeholder"
               height={500}
               width={500}
+              className="h-auto max-w-full rounded-3xl dark:opacity-90"
               loading="eager"
             />
           </div>
-          <Flex className="flex-col items-start gap-6">
-            <div className="flex flex-col gap-4">
-              <h2 className="font-bold font-bricolage-grotesque text-4xl">
+          <Flex className="w-full flex-col items-start gap-8 lg:w-1/2">
+            <div className="flex flex-col gap-4 text-left">
+              <h2 className="font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
                 Core Typing Capabilities
               </h2>
-              <p className="max-w-lg text-[#5D5D5D] text-xl leading-7">
+              <p className="max-w-lg text-lg text-zinc-600 leading-relaxed md:text-xl dark:text-zinc-400">
                 From phonetic to fixed layouts, OpenBangla covers every way you
                 type Bangla.
               </p>
             </div>
-            <div className="grid gap-2">
+            <div className="grid w-full gap-3">
               {CAPABILITIES.map((capability) => (
                 <Option
                   key={capability.id}

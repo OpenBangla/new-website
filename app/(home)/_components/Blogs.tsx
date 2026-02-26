@@ -14,17 +14,17 @@ const BLOGS = [
 
 export default function Blogs() {
   return (
-    <section className="py-16">
+    <section className="py-14">
       <Container>
-        <div>
-          <h1 className="font-bold font-bricolage-grotesque text-4xl">
+        <div className="text-center lg:text-left">
+          <h2 className="font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
             Stay Updated
-          </h1>
-          <p className="pt-2 text-[#5D5D5D] text-xl">
+          </h2>
+          <p className="pt-2 text-lg text-zinc-600 md:text-xl dark:text-zinc-400">
             Release notes, announcements, and updates from the OpenBangla team.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-6 py-10">
+        <div className="grid grid-cols-1 gap-6 pt-10 lg:grid-cols-2">
           {BLOGS.map((blog) => (
             <BlogCard
               key={blog.title}

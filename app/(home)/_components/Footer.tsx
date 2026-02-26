@@ -1,46 +1,53 @@
+import Image from "next/image";
 import Container from "@/components/common/Container";
 import Flex from "@/components/common/Flex";
-import Image from "next/image";
-import { Facebook, Twitter, GitHub, Mail } from "./Icons";
+import { Facebook, GitHub, Mail, Twitter } from "./Icons";
 
 export default function Footer() {
   return (
     <>
-      <section className="py-16 bg-white">
+      <section className="border-zinc-100 border-t bg-white py-12 md:py-16 dark:border-zinc-900 dark:bg-zinc-950">
         <Container>
-          <Flex className="flex-col justify-baseline items-baseline">
-            <Flex className="gap-5">
-              <div className="rounded-lg overflow-hidden">
-                <Image
-                  src="https://placehold.co/48x48"
-                  alt="placeholder"
-                  width={48}
-                  height={48}
-                />
-              </div>
-              <h3 className="text-xl font-bold font-bricolage-grotesque">
-                OpenBangla Keyboard
-              </h3>
-            </Flex>
-            <p className="pt-4 pb-8 max-w-sm text-lg text-[#5D5D5D] ">
-              The versatile, all-in-one solution for both phonetic and
-              fixed-layout writing.
-            </p>
-            <Flex className="gap-4">
-              <Facebook />
-              <GitHub />
-              <Mail />
-              <Twitter />
+          <Flex className="flex-col items-center justify-between gap-10 text-center lg:flex-row lg:items-start lg:text-left">
+            <Flex className="flex-col items-center lg:items-start">
+              <Flex className="gap-4">
+                <div className="overflow-hidden rounded-xl shadow-sm">
+                  <Image
+                    src="https://placehold.co/48x48"
+                    alt="placeholder"
+                    width={48}
+                    height={48}
+                  />
+                </div>
+                <h3 className="font-bold font-bricolage-grotesque text-xl text-zinc-900 md:text-2xl dark:text-zinc-50">
+                  OpenBangla Keyboard
+                </h3>
+              </Flex>
+              <p className="max-w-sm pt-4 pb-6 text-base text-zinc-500 md:text-lg dark:text-zinc-400">
+                The versatile, all-in-one solution for both phonetic and
+                fixed-layout writing.
+              </p>
+              <Flex className="gap-5 text-zinc-400 transition-colors hover:text-emerald-500 dark:text-zinc-600">
+                <Facebook className="cursor-pointer hover:text-emerald-500" />
+                <GitHub className="cursor-pointer hover:text-emerald-500" />
+                <Mail className="cursor-pointer hover:text-emerald-500" />
+                <Twitter className="cursor-pointer hover:text-emerald-500" />
+              </Flex>
             </Flex>
           </Flex>
         </Container>
       </section>
-      <footer className="bg-[#06402B] py-6">
+      <footer className="border-emerald-900/50 border-t bg-emerald-950 py-8 dark:border-zinc-900 dark:bg-black">
         <Container>
-          <Flex className="justify-between text-white font-medium">
-            <p>Copyright 2015-2026 OpenBangla Team. All rights reserved.</p>
+          <Flex className="flex-col items-center justify-between gap-4 font-medium text-emerald-100/70 text-sm md:flex-row md:text-base dark:text-zinc-500">
+            <p className="text-center md:text-left">
+              © 2015-2026 OpenBangla Team. All rights reserved.
+            </p>
             <p>
-              Made with 💖 by <span className="text-[#FFE498]">Muhsin</span>
+              Made with 💖 by{" "}
+              <span className="text-amber-200 dark:text-amber-500/80">
+                Muhsin
+              </span>
             </p>
           </Flex>
         </Container>

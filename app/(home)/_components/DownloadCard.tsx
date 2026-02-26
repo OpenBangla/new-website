@@ -13,13 +13,15 @@ export default function DownloadCard({
   icon,
 }: DownloadCardProps) {
   return (
-    <Flex className="flex-col gap-5 rounded-3xl border border-[#E5E5E5] bg-white py-12 shadow-sm">
-      <div className="">{icon}</div>
-      <h3 className="font-bold text-2xl">{title}</h3>
-      <p className="max-w-[255px] text-center text-[#5D5D5D] text-lg">
+    <Flex className="flex-col gap-5 rounded-3xl border border-zinc-200 bg-white py-8 shadow-sm transition-colors hover:border-emerald-500/30 md:py-12 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-500/20">
+      <div className="text-zinc-900 dark:text-zinc-50">{icon}</div>
+      <h3 className="font-bold text-xl text-zinc-900 md:text-2xl dark:text-zinc-50">
+        {title}
+      </h3>
+      <p className="max-w-[255px] text-center text-base text-zinc-500 md:text-lg dark:text-zinc-400">
         {description}
       </p>
-      <Button className="font-semibold">Download</Button>
+      <Button className="px-8 font-semibold">Download</Button>
     </Flex>
   );
 }
