@@ -18,7 +18,7 @@ export default function BlogCard({
   description,
 }: BlogCardProps) {
   return (
-    <Flex className="justify-between gap-4 rounded-xl bg-white p-5">
+    <Flex className="justify-between gap-4 rounded-xl bg-white p-5 shadow-sm border border-[#E5E5E5]">
       <div className="shrink-0 overflow-hidden rounded-lg">
         <Image
           src={imgSrc}
