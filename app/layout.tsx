@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import "./global.css";
 import { RootProvider } from "fumadocs-ui/provider/next";
-import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import {
+  Baloo_Da_2,
+  Bricolage_Grotesque,
+  Instrument_Sans,
+} from "next/font/google";
+
+const balooDa2 = Baloo_Da_2({
+  subsets: ["bengali"],
+  variable: "--font-baloo-da-2",
+  display: "swap",
+});
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -29,7 +39,7 @@ export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${bricolageGrotesque.variable} ${instrumentSans.variable}`}
+      className={`${bricolageGrotesque.variable} ${instrumentSans.variable} ${balooDa2.variable}`}
       suppressHydrationWarning
     >
       <body

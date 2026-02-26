@@ -1,6 +1,7 @@
+import Blogs from "./_components/Blogs";
 import Capabilities from "./_components/Capabilities";
 import Features from "./_components/Features";
-import { GetObk } from "./_components/GetObk";
+import GetObk from "./_components/GetObk";
 import Hero from "./_components/Hero";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Features />
       <Capabilities />
       <GetObk />
+      <Blogs />
     </>
   );
 }
