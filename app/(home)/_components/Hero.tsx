@@ -13,7 +13,7 @@ export default function Hero() {
               Open Source • Cross Platform
             </h4>
 
-            <h1 className="max-w-2xl pt-4 pb-5 font-bricolage-grotesque font-extrabold text-5xl text-[#202020] leading-14">
+            <h1 className="max-w-2xl tracking-tight pt-4 pb-5 font-bricolage-grotesque font-extrabold text-5xl text-[#202020] leading-14">
               The Last{" "}
               <span className="bg-linear-to-r from-[#0D8C5E] to-[#06402A] bg-clip-text text-transparent">
                 Bangla writing solution
