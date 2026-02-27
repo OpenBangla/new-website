@@ -15,7 +15,7 @@ export default function Button({
     <button
       type={type}
       className={cn(
-        "rounded-full border-1 border-transparent bg-[#0D8C5E] px-7 py-4 text-white",
+        "rounded-full border border-transparent bg-[#0D8C5E] px-7 py-4 text-white",
         className,
       )}
     >
