@@ -1,3 +1,4 @@
+import AnimatedContent from "@/components/animations/AnimatedContent";
 import Container from "@/components/common/Container";
 import FeatureCard from "./FeatureCard";
 import {
@@ -61,16 +62,29 @@ export default function Features() {
         <h2 className="mx-auto max-w-md text-center font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
           Everything You Need to Type Bangla
         </h2>
-        <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-2 md:pt-16 lg:grid-cols-3">
-          {FEATURES.map((feature) => (
-            <FeatureCard
-              key={feature.title}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
-        </div>
+        <AnimatedContent
+          distance={100}
+          direction="vertical"
+          reverse={false}
+          duration={0.8}
+          ease="power3.out"
+          initialOpacity={0}
+          animateOpacity
+          scale={1}
+          threshold={0.1}
+          delay={0}
+        >
+          <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-2 md:pt-16 lg:grid-cols-3">
+            {FEATURES.map((feature) => (
+              <FeatureCard
+                key={feature.title}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
+          </div>
+        </AnimatedContent>
       </Container>
     </section>
   );
