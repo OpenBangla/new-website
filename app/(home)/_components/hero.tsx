@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Button from "@/components/common/Button";
-import Container from "@/components/common/Container";
-import Flex from "@/components/common/Flex";
+import Button from "@/components/common/button";
+import Container from "@/components/common/container";
+import Flex from "@/components/common/flex";
 
 export default function Hero() {
   return (

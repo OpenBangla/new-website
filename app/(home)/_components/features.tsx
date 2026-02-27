@@ -1,6 +1,6 @@
-import AnimatedContent from "@/components/animations/AnimatedContent";
-import Container from "@/components/common/Container";
-import FeatureCard from "./FeatureCard";
+import AnimatedContent from "@/components/animations/animated-content";
+import Container from "@/components/common/container";
+import FeatureCard from "./feature-card";
 import {
   AutoCorrect,
   Dictionary,
@@ -8,7 +8,7 @@ import {
   LayoutViewer,
   Performance,
   PreferenceMemory,
-} from "./Icons";
+} from "./icons";
 
 const FEATURES = [
   {

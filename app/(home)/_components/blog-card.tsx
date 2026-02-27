@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import Image from "next/image";
-import Flex from "@/components/common/Flex";
+import Flex from "@/components/common/flex";
 
 interface BlogCardProps {
   imgSrc: string;

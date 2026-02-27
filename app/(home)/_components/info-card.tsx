@@ -1,4 +1,4 @@
-import Flex from "@/components/common/Flex";
+import Flex from "@/components/common/flex";
 
 interface InfoCardProps {
   label: string;
