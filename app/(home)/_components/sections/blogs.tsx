@@ -1,5 +1,5 @@
 import Container from "@/components/common/container";
-import BlogCard from "./blog-card";
+import BlogCard from "../ui/blog-card";
 
 const BLOGS = [
   {

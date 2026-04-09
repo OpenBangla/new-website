@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/common/container";
 import Flex from "@/components/common/flex";
-import Option from "./info-card";
+import Option from "../ui/info-card";
 
 const CAPABILITIES = [
   {

@@ -1,7 +1,7 @@
 import Container from "@/components/common/container";
 import Flex from "@/components/common/flex";
-import DownloadCard from "./download-card";
-import { Linux, MacOS, Windows } from "./icons";
+import DownloadCard from "../ui/download-card";
+import { Linux, MacOS, Windows } from "../ui/icons";
 
 const GET_OBK = [
   {
