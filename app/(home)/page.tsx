@@ -1,9 +1,9 @@
-import Blogs from "./_components/blogs";
-import Capabilities from "./_components/capabilities";
-import Features from "./_components/features";
-import Footer from "./_components/footer";
-import GetObk from "./_components/get-obk";
-import Hero from "./_components/hero";
+import Blogs from "./_components/sections/blogs";
+import Capabilities from "./_components/sections/capabilities";
+import Features from "./_components/sections/features";
+import Footer from "./_components/sections/footer";
+import GetObk from "./_components/sections/get-obk";
+import Hero from "./_components/sections/hero";
 
 export default function HomePage() {
   return (
