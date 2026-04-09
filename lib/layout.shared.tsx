@@ -2,13 +2,7 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Book, FileText } from "lucide-react";
 import Image from "next/image";
 import Flex from "@/components/common/flex";
-
-// fill this with your actual GitHub info, for example:
-export const gitConfig = {
-  user: "openbangla",
-  repo: "openbangla-keyboard",
-  branch: "master",
-};
+import { appName, gitConfig } from './shared';
 
 export function baseOptions(): BaseLayoutProps {
   return {
@@ -24,7 +18,7 @@ export function baseOptions(): BaseLayoutProps {
             className="rounded-lg"
             loading="eager"
           />
-          <span className="font-bold">OpenBangla Keyboard</span>
+          <span className="font-bold">{appName}</span>
         </Flex>
       ),
     },
