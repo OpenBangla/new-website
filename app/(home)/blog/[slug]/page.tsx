@@ -2,7 +2,7 @@ import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blog } from "@/lib/source";
+import { blog, getPageImage } from "@/lib/source";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -66,5 +66,8 @@ export async function generateMetadata(props: {
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      images: getPageImage(page).url,
+    },
   };
 }
