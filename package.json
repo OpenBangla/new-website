@@ -13,11 +13,9 @@
     "fix:unsafe": "biome check --write --unsafe ."
   },
   "dependencies": {
-    "@takumi-rs/image-response": "^0.68.17",
     "fumadocs-core": "^16.6.16",
     "fumadocs-mdx": "^14.2.9",
     "fumadocs-ui": "^16.6.16",
-    "gsap": "^3.14.2",
     "lucide-react": "^0.575.0",
     "next": "^16.1.6",
     "react": "^19.2.4",
