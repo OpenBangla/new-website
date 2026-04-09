@@ -6,7 +6,7 @@ import { balooDa2, bricolageGrotesque, inter } from "./fonts";
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === "production"
-      ? "https://openbangla.org"
+      ? "https://obk-new-website.vercel.app"
       : "http://localhost:3000",
   ),
   title: "OpenBangla",
