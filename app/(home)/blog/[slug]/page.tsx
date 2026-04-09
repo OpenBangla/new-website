@@ -65,7 +65,7 @@ export async function generateMetadata(props: {
 
   return {
     title: page.data.title,
-    description: page.data.description,
+    description: page.data.description ?? "A blog post by OpenBangla Team",
     openGraph: {
       images: getPageImage(page).url,
     },
