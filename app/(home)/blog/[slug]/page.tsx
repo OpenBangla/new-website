@@ -1,5 +1,6 @@
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import defaultMdxComponents from "fumadocs-ui/mdx";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blog, getPageImage } from "@/lib/source";
@@ -55,9 +56,9 @@ export function generateStaticParams(): { slug: string }[] {
   }));
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata(
+  props: PageProps<"/blog/[slug]">,
+): Promise<Metadata> {
   const params = await props.params;
   const page = blog.getPage([params.slug]);
 
