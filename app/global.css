@@ -3,7 +3,6 @@
 @import "fumadocs-ui/css/preset.css";
 
 @theme {
-  --font-baloo-da-2: var(--font-baloo-da-2);
   --font-bricolage-grotesque: var(--font-bricolage-grotesque);
   --font-inter: var(--font-inter);
 }

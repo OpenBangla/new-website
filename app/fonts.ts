@@ -1,10 +1,4 @@
-import { Baloo_Da_2, Bricolage_Grotesque, Inter } from "next/font/google";
-
-export const balooDa2 = Baloo_Da_2({
-  subsets: ["bengali"],
-  variable: "--font-baloo-da-2",
-  display: "swap",
-});
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 
 export const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],

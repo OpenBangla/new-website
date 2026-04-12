@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./global.css";
 import { RootProvider } from "fumadocs-ui/provider/next";
-import { balooDa2, bricolageGrotesque, inter } from "./fonts";
+import { bricolageGrotesque, inter } from "./fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${bricolageGrotesque.variable} ${inter.variable} ${balooDa2.variable}`}
+      className={`${bricolageGrotesque.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
       <body className={`${inter.className} flex min-h-screen flex-col`}>
