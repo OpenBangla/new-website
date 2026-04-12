@@ -33,7 +33,7 @@ export default function BlogCard({
       <div className="min-w-0 flex-1">
         <Flex className="items-start justify-between gap-2">
           <div className="flex-1">
-            <h3 className="font-baloo-da-2 font-extrabold text-base text-zinc-900 leading-tight md:text-lg dark:text-zinc-50">
+            <h3 className="font-extrabold text-base text-zinc-900 leading-tight md:text-lg dark:text-zinc-50">
               {title}
             </h3>
             <Flex className="mt-1 items-center justify-start gap-2 text-zinc-400 dark:text-zinc-500">
@@ -46,7 +46,7 @@ export default function BlogCard({
             className="mt-1 shrink-0 text-zinc-300 dark:text-zinc-600"
           />
         </Flex>
-        <p className="mt-2 line-clamp-2 font-baloo-da-2 text-sm text-zinc-500 leading-relaxed dark:text-zinc-400">
+        <p className="mt-2 line-clamp-2 text-sm text-zinc-500 leading-relaxed dark:text-zinc-400">
           {description}
         </p>
       </div>
