@@ -1,8 +1,10 @@
-import { generate as DefaultImage } from "fumadocs-ui/og";
+import { ImageResponse } from "@takumi-rs/image-response";
+import { generate as DefaultImage } from "fumadocs-ui/og/takumi";
 import { notFound } from "next/navigation";
-import { ImageResponse } from "next/og";
 import { appName } from "@/lib/shared";
 import { blog, getBlogImage } from "@/lib/source";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 export const revalidate = false;
 
@@ -14,15 +16,92 @@ export async function GET(
   const page = blog.getPage(slug.slice(0, -1));
   if (!page) notFound();
 
+  const fontData = readFileSync(
+    join(
+      process.cwd(),
+      "public",
+      "fonts",
+      "noto-sans-bengali",
+      "NotoSansBengali[wdth,wght].woff2",
+    ),
+  );
+
   return new ImageResponse(
-    <DefaultImage
-      title={page.data.title}
-      description={page.data.description || `By ${page.data.author}`}
-      site={appName}
-    />,
+    <div
+      style={{
+        fontSynthesisWeight: "none",
+        fontFamily: "Noto Sans Bengali",
+        lineHeight: 1.25,
+        width: 1200,
+        height: 630,
+      }}
+    >
+      <DefaultImage
+        title={page.data.title}
+        description={page.data.description || `By ${page.data.author}`}
+        site={appName}
+      />
+    </div>,
     {
       width: 1200,
       height: 630,
+      format: "webp",
+      fonts: [
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 100,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 200,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 300,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 400,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 500,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 600,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 700,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 800,
+          style: "normal",
+        },
+        {
+          name: "Noto Sans Bengali",
+          data: fontData,
+          weight: 900,
+          style: "normal",
+        },
+      ],
     },
   );
 }
