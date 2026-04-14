@@ -1,5 +1,5 @@
 import Flex from "@/app/(home)/_components/common/common/flex";
-import Button from "@/app/(home)/_components/ui/button";
+import { Button } from "@/app/(home)/_components/ui/button";
 
 interface DownloadCardProps {
   title: string;
@@ -18,10 +18,15 @@ export default function DownloadCard({
       <h3 className="font-bold text-xl text-zinc-900 md:text-2xl dark:text-zinc-50">
         {title}
       </h3>
-      <p className="max-w-[255px] text-center text-base text-zinc-500 md:text-lg dark:text-zinc-400">
+      <p className="max-w-64 text-center text-base text-zinc-500 md:text-lg dark:text-zinc-400">
         {description}
       </p>
-      <Button className="px-8 font-semibold">Download</Button>
+      <Button
+        className="hover:border-transparent hover:bg-[#0D8C5E]/95 hover:text-white"
+        variant={"outline"}
+      >
+        Download
+      </Button>
     </Flex>
   );
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "@/app/(home)/_components/common/common/container";
 import Flex from "@/app/(home)/_components/common/common/flex";
-import Button from "@/app/(home)/_components/ui/button";
+import { Button } from "@/app/(home)/_components/ui/button";
 
 export default function Hero() {
   return (
@@ -28,12 +28,14 @@ export default function Hero() {
             </p>
 
             <Flex className="w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-6">
-              <Button className="w-full font-semibold sm:w-auto">
+              {/* <Button className="w-full font-semibold sm:w-auto">
                 Install OpenBangla Keyboard
-              </Button>{" "}
-              <Button className="w-full border-zinc-300 bg-transparent text-zinc-600 hover:bg-zinc-100 sm:w-auto dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800">
+              </Button>{" "} */}
+              <Button>Install OpenBangla Keyboard</Button>
+              {/* <Button className="w-full border-zinc-300 bg-transparent text-zinc-600 hover:bg-zinc-100 sm:w-auto dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800">
                 View Demo
-              </Button>
+              </Button> */}
+              <Button variant={"outline"}>View Demo</Button>
             </Flex>
           </Flex>
           <div className="flex w-full justify-center lg:w-auto">
