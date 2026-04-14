@@ -14,7 +14,7 @@ const BLOGS = [
 
 export default function Blogs() {
   return (
-    <section className="py-14">
+    <section className="bg-neutral-50 py-14 dark:bg-neutral-950">
       <Container>
         <div className="text-center lg:text-left">
           <h2 className="font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">

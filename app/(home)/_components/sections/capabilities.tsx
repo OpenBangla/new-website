@@ -36,7 +36,7 @@ const CAPABILITIES = [
 
 export default function Capabilities() {
   return (
-    <section className="py-20">
+    <section className="bg-neutral-50 py-20 dark:bg-neutral-950">
       <Container>
         <Flex className="flex-col justify-between gap-12 lg:flex-row lg:gap-16">
           <div className="flex w-full justify-center lg:block lg:w-1/2">

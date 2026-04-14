@@ -5,7 +5,7 @@ import { Button } from "@/app/(home)/_components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="py-12 md:py-20 lg:py-28">
+    <section className="bg-neutral-50 py-12 md:py-20 lg:py-28 dark:bg-neutral-950">
       <Container>
         <Flex className="flex-col justify-between gap-12 lg:flex-row lg:gap-0">
           <Flex className="flex-col items-baseline">

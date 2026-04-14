@@ -48,7 +48,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-zinc-200 border-t bg-white py-12 md:py-16 dark:border-zinc-800 dark:bg-zinc-950">
+    <footer className="border-zinc-200 border-t bg-neutral-50 py-12 md:py-16 dark:border-zinc-800 dark:bg-neutral-950">
       <Container>
         {/* Main Footer Content */}
         <Flex className="flex-col justify-between gap-12 lg:flex-row lg:items-start">

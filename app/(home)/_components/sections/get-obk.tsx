@@ -27,7 +27,7 @@ const GET_OBK = [
 
 export default function GetObk() {
   return (
-    <section className="bg-slate-50 pt-16 pb-24 md:pt-20 md:pb-32 dark:bg-zinc-950">
+    <section className="bg-neutral-50 pt-16 pb-24 md:pt-20 md:pb-32 dark:bg-neutral-950">
       <Container>
         <Flex className="flex-col gap-3 text-center">
           <h2 className="font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
