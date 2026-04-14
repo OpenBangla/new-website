@@ -2,11 +2,23 @@ import Image from "next/image";
 import Container from "@/app/(home)/_components/common/common/container";
 import Flex from "@/app/(home)/_components/common/common/flex";
 import { Button } from "@/app/(home)/_components/ui/button";
+import { cn } from "@/lib/cn";
 
 export default function Hero() {
   return (
-    <section className="bg-neutral-50 py-12 md:py-20 lg:py-28 dark:bg-neutral-950">
-      <Container>
+    <section className="relative overflow-hidden bg-neutral-50 py-12 md:py-20 lg:py-28 dark:bg-neutral-950">
+      <div
+        className={cn(
+          "absolute inset-0 z-0",
+          "bg-size-[40px_40px]",
+          "bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
+          "dark:bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+        )}
+      />
+
+      {/* 2. The Mask Layer (Creates the fade-out effect) */}
+      <div className="mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none absolute inset-0 z-0 bg-neutral-50 dark:bg-neutral-950" />
+      <Container className="relative z-10">
         <Flex className="flex-col justify-between gap-12 lg:flex-row lg:gap-0">
           <Flex className="flex-col items-baseline">
             <h4 className="rounded-full bg-emerald-500/20 px-5 py-2.5 font-medium text-emerald-900 text-sm dark:bg-emerald-500/10 dark:text-emerald-400">
