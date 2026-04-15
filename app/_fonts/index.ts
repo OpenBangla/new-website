@@ -19,4 +19,5 @@ export const notoSansBengali = localFont({
   fallback: ["system-ui", "sans-serif"],
   adjustFontFallback: false,
   variable: "--font-noto-sans-bengali",
+  preload: false,
 });
