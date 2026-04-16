@@ -51,7 +51,8 @@ export default function Footer() {
     <footer className="border-zinc-200 border-t bg-neutral-50 py-12 md:py-16 dark:border-zinc-800 dark:bg-neutral-950">
       <Container>
         {/* Main Footer Content */}
-        <Flex className="flex-col justify-between gap-12 lg:flex-row lg:items-start">
+        <Flex className="flex-col justify-between items-stretch gap-12 lg:flex-row lg:items-start">
+
           {/* Brand & Description */}
           <div className="flex max-w-sm flex-col items-start gap-4">
             <Flex className="items-center gap-3">
@@ -63,6 +64,7 @@ export default function Footer() {
                   height={48}
                 />
               </div>
+
               {/* Replace with actual logo Image */}
               <h3 className="font-bold font-bricolage-grotesque text-2xl text-zinc-950 dark:text-zinc-50">
                 OpenBangla
@@ -99,9 +101,9 @@ export default function Footer() {
         </Flex>
 
         {/* Bottom Bar */}
-        <Flex className="mt-20 flex-col items-center justify-between gap-4 border-zinc-100 border-t pt-8 font-medium text-zinc-500 md:flex-row dark:border-zinc-900 dark:text-zinc-400">
+        <Flex className="mt-20 flex-col justify-between gap-4 border-zinc-100 border-t pt-8 font-medium text-zinc-500 md:flex-row dark:border-zinc-900 dark:text-zinc-400">
           <p>© 2015–{currentYear} OpenBangla Team</p>
-          <p>
+          <p className="text-center">
             Made with ❤️ by{" "}
             <Link
               href="https://github.com/mominul"
