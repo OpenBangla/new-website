@@ -5,8 +5,8 @@
 
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import Container from "@/app/(home)/_components/common/container";
 import Flex from "@/app/(home)/_components/common/flex";
 
@@ -100,8 +100,9 @@ export default function Capabilities() {
               {CAPABILITIES.map((cap, i) => (
                 <div
                   key={cap.id}
-                  className={`absolute inset-0 transition-all duration-300 ease-in-out ${activeIndex === i ? "opacity-100" : "opacity-0"
-                    }`}
+                  className={`absolute inset-0 transition-all duration-300 ease-in-out ${
+                    activeIndex === i ? "opacity-100" : "opacity-0"
+                  }`}
                 >
                   <Image
                     src={cap.image}
@@ -118,13 +119,14 @@ export default function Capabilities() {
             {/* Right Side: Clickable Options (Stationary) */}
             <div className="grid w-full grid-cols-1 gap-4 lg:w-1/2">
               <div className="mb-6 flex flex-col gap-2">
-                <h2 className="font-bold font-bricolage-grotesque text-3xl md:text-4xl text-zinc-900 dark:text-zinc-50">
+                <h2 className="font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
                   Core Typing Capabilities
                 </h2>
               </div>
 
               {CAPABILITIES.map((capability, i) => (
                 <button
+                  type="button"
                   key={capability.id}
                   onClick={() => {
                     // Optional: Scroll to the specific part of the section when clicked
@@ -133,14 +135,15 @@ export default function Capabilities() {
                     const scrollPos =
                       containerRef.current.offsetTop +
                       i *
-                      (containerRef.current.scrollHeight /
-                        CAPABILITIES.length);
+                        (containerRef.current.scrollHeight /
+                          CAPABILITIES.length);
                     window.scrollTo({ top: scrollPos, behavior: "smooth" });
                   }}
-                  className={`flex flex-col gap-2 rounded-2xl border p-6 text-left transition-all duration-300 ${activeIndex === i
-                    ? "border-emerald-500/50 bg-white shadow-md dark:bg-zinc-900"
-                    : "border-transparent bg-transparent opacity-50 hover:opacity-100"
-                    }`}
+                  className={`flex flex-col gap-2 rounded-2xl border p-6 text-left transition-all duration-300 ${
+                    activeIndex === i
+                      ? "border-emerald-500/50 bg-white shadow-md dark:bg-zinc-900"
+                      : "border-transparent bg-transparent opacity-50 hover:opacity-100"
+                  }`}
                 >
                   <h3
                     className={`font-bold transition-colors ${activeIndex === i ? "text-emerald-600 dark:text-emerald-400" : "text-zinc-600 dark:text-zinc-400"}`}

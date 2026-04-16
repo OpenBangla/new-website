@@ -51,8 +51,7 @@ export default function Footer() {
     <footer className="border-zinc-200 border-t bg-neutral-50 py-12 md:py-16 dark:border-zinc-800 dark:bg-neutral-950">
       <Container>
         {/* Main Footer Content */}
-        <Flex className="flex-col justify-between items-stretch gap-12 lg:flex-row lg:items-start">
-
+        <Flex className="flex-col items-stretch justify-between gap-12 lg:flex-row lg:items-start">
           {/* Brand & Description */}
           <div className="flex max-w-sm flex-col items-start gap-4">
             <Flex className="items-center gap-3">
