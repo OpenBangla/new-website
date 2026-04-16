@@ -1,4 +1,4 @@
-import Container from "@/app/(home)/_components/common/common/container";
+import Container from "@/app/(home)/_components/common/container";
 import FeatureCard from "../ui/feature-card";
 import {
   AutoCorrect,

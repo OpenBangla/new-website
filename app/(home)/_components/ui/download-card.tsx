@@ -1,4 +1,4 @@
-import Flex from "@/app/(home)/_components/common/common/flex";
+import Flex from "@/app/(home)/_components/common/flex";
 import { Button } from "@/app/(home)/_components/ui/button";
 
 interface DownloadCardProps {

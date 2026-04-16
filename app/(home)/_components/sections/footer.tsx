@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from "@/app/(home)/_components/common/common/container";
-import Flex from "@/app/(home)/_components/common/common/flex";
+import Container from "@/app/(home)/_components/common/container";
+import Flex from "@/app/(home)/_components/common/flex";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
