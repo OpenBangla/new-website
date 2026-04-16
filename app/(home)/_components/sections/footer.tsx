@@ -64,7 +64,7 @@ export default function Footer() {
                 />
               </div>
               {/* Replace with actual logo Image */}
-              <h3 className="font-bold font-bricolage-grotesque text-2xl text-red-500">
+              <h3 className="font-bold font-bricolage-grotesque text-2xl text-zinc-950 dark:text-zinc-50">
                 OpenBangla
               </h3>
             </Flex>
