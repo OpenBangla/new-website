@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Container from "@/app/(home)/_components/common/container";
 import { formatBlogPostDate, getLatestBlogPosts } from "@/lib/blog";
-import { getBlogImage } from "@/lib/source";
 import BlogCard from "../ui/blog-card";
 
 export default function Blogs() {
@@ -22,10 +21,9 @@ export default function Blogs() {
           {posts.map((post) => (
             <Link key={post.url} href={post.url} className="block">
               <BlogCard
-                imgSrc={getBlogImage(post).url}
-                imgAlt={post.data.title}
                 title={post.data.title}
                 date={formatBlogPostDate(post)}
+                author={post.data.author}
                 description={post.data.description ?? ""}
               />
             </Link>
