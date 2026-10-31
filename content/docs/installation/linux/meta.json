@@ -1,4 +1,4 @@
 {
   "title": "Linux",
-  "pages": ["compile", "desktops", "uninstall"]
+  "pages": ["build", "desktops", "uninstall"]
 }
