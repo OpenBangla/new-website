@@ -1,12 +1,14 @@
 ---
-title: Build
+title: Building and Installing from Source
 description: Build OpenBangla Keyboard from source on GNU/Linux.
 ---
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+This is a step by step build guide for OpenBangla Keyboard for linux.
 
 OpenBangla Keyboard currently has the following build dependencies:
-
 - GNU GCC 8 (or later) or Clang 7 (or later) compiler
 - Rust 1.34.0 or later
 - GNU Make or Ninja
@@ -15,7 +17,19 @@ OpenBangla Keyboard currently has the following build dependencies:
 - iBus development library
 - Zstandard compression library (zstd)
 
-Install them for your distribution:
+<Steps>
+
+<Step>
+### Install Rust
+Install `Rust` using [`rustup`](https://rust-lang.org/tools/install/) by following script.
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+</Step>
+
+<Step>
+### Install Dependencies
+Install the rest of the dependencies for specific distribution.
 
 <Tabs
   groupId="distro"
@@ -25,52 +39,214 @@ Install them for your distribution:
 <Tab value="Ubuntu / Debian">
 
 ```sh
-sudo apt-get install build-essential rustc cargo cmake libibus-1.0-dev qtbase5-dev qtbase5-dev-tools libzstd-dev
+sudo apt-get install build-essential cmake libibus-1.0-dev libfcitx5core-dev qtbase5-dev qtbase5-dev-tools libzstd-dev 
 ```
 
 </Tab>
 <Tab value="Fedora">
 
 ```sh
-sudo dnf install @buildsys-build rust cargo cmake qt5-qtdeclarative-devel ibus-devel libzstd-devel
+sudo dnf install @buildsys-build cmake qt5-qtdeclarative-devel ibus-devel fcitx5-devel libzstd-devel 
 ```
 
 </Tab>
 <Tab value="Arch Linux">
   
 ```sh 
-sudo pacman -S base-devel rust cmake qt5-base libibus zstd 
+sudo pacman -S base-devel cmake qt5-base libibus fcitx5 zstd 
 ```
   
 </Tab>
 <Tab value="openSUSE">
 
 ```sh
-sudo zypper install libQt5Core-devel libQt5Widgets-devel libQt5Network-devel libzstd-devel libzstd1 cmake make ninja rust ibus-devel ibus clang gcc patterns-devel-base-devel_basis
+sudo zypper install libQt5Core-devel libQt5Widgets-devel libQt5Network-devel libzstd-devel libzstd1 cmake make ninja ibus-devel ibus fcitx5-devel clang gcc patterns-devel-base-devel_basis
 ```
 
 </Tab>
 <Tab value="Solus">
 
 ```sh
-sudo eopkg install -c system.devel rust qt5-base-devel ibus-devel zstd-devel git
+sudo eopkg install -c system.devel qt5-base-devel ibus-devel fcitx5-devel zstd-devel git
 ```
 
 </Tab>
 </Tabs>
+</Step>
 
-## Building & Installing
+<Step>
+### Clone the Repository
 
-After installing the required dependencies, clone the repository, compile the source code, and install the package on your system:
+After installing the required dependencies, clone the repository.
 
 ```sh
 # Clone the repository and navigate into the project folder
 git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git
 cd OpenBangla-Keyboard
-
-# Create a build directory, compile, and install
-mkdir build && cd build
-cmake ..
-make
-sudo make install
 ```
+</Step>
+
+<Step>
+### Build the binaries
+In this step generate `cmake` configurations and compile using `cmake`.
+
+<Tabs
+  groupId="custom_options"
+  persist
+  items={["Default", "Ibus only", "Fcitx only"]}
+>
+
+<Tab value="Default">
+
+```sh
+mkdir build && cd build
+cmake -DENABLE_BOTH=ON ..
+```
+</Tab>
+
+
+<Tab value="Ibus only">
+
+```sh
+mkdir build && cd build
+cmake -DENABLE_IBUS=ON ..
+```
+</Tab>
+
+<Tab value="Fcitx only">
+
+```sh
+mkdir build && cd build
+cmake -DENABLE_FCITX=ON ..
+```
+</Tab>
+</Tabs>
+
+Afterwards, build the binaries inside the `build` directory.
+
+```sh
+cmake --build .
+```
+</Step>
+
+<Step>
+### Install to System
+From the build directory, just use this command
+
+```sh
+sudo cmake --install .
+```
+</Step>
+
+<Step>
+### Restart Input method
+The system needs an input method restart. A `logout` and `login` back would be the best option
+<Tabs
+  groupId="custom_options"
+  persist
+  items={["Default", "Ibus only", "Fcitx only"]}
+>
+
+<Tab value="Default">
+
+```sh
+loginctl terminate-session self
+```
+</Tab>
+
+
+<Tab value="Ibus only">
+
+```sh
+ibus restart
+```
+</Tab>
+
+<Tab value="Fcitx only">
+
+```sh
+fcitx5 -r -d
+```
+</Tab>
+</Tabs>
+
+</Step>
+</Steps>
+
+---
+
+### TL;DR
+Use this Command to build and install.
+
+<Tabs
+  groupId="distro"
+  persist
+  items={["Ubuntu / Debian", "Fedora", "Arch Linux", "openSUSE", "Solus"]}
+>
+<Tab value="Ubuntu / Debian">
+
+```sh
+sudo apt-get update && \
+sudo apt-get install -y build-essential cmake git libibus-1.0-dev libfcitx5core-dev qtbase5-dev qtbase5-dev-tools libzstd-dev cargo rustc && \
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git && \
+cd OpenBangla-Keyboard && \
+mkdir build && cd build && \
+cmake -DENABLE_BOTH=ON -DCMAKE_INSTALL_PREFIX="/usr" .. && \
+cmake --build . -j$(nproc) && \
+sudo cmake --install .
+```
+
+</Tab>
+<Tab value="Fedora">
+
+```sh
+sudo dnf install -y @buildsys-build cmake git qt5-qtdeclarative-devel ibus-devel fcitx5-devel libzstd-devel cargo rust && \
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git && \
+cd OpenBangla-Keyboard && \
+mkdir build && cd build && \
+cmake -DENABLE_BOTH=ON -DCMAKE_INSTALL_PREFIX="/usr" .. && \
+cmake --build . -j$(nproc) && \
+sudo cmake --install .
+```
+
+</Tab>
+<Tab value="Arch Linux">
+  
+```sh 
+sudo pacman -S --needed --noconfirm base-devel cmake git qt5-base libibus fcitx5 zstd rust && \
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git && \
+cd OpenBangla-Keyboard && \
+mkdir build && cd build && \
+cmake -DENABLE_BOTH=ON -DCMAKE_INSTALL_PREFIX="/usr" .. && \
+cmake --build . -j$(nproc) && \
+sudo cmake --install .
+```
+  
+</Tab>
+<Tab value="openSUSE">
+
+```sh
+sudo zypper install -y libQt5Core-devel libQt5Widgets-devel libQt5Network-devel libzstd-devel cmake make gcc-c++ ibus-devel fcitx5-devel git rust cargo && \
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git && \
+cd OpenBangla-Keyboard && \
+mkdir build && cd build && \
+cmake -DENABLE_BOTH=ON -DCMAKE_INSTALL_PREFIX="/usr" .. && \
+cmake --build . -j$(nproc) && \
+sudo cmake --install .
+```
+
+</Tab>
+<Tab value="Solus">
+
+```sh
+sudo eopkg install -y -c system.devel qt5-base-devel ibus-devel fcitx5-devel zstd-devel git rust && \
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git && \
+cd OpenBangla-Keyboard && \
+mkdir build && cd build && \
+cmake -DENABLE_BOTH=ON -DCMAKE_INSTALL_PREFIX="/usr" .. && \
+cmake --build . -j$(nproc) && \
+sudo cmake --install .
+```
+
+</Tab>
+</Tabs>
