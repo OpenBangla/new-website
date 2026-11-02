@@ -9,6 +9,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 This is a step by step build guide for OpenBangla Keyboard for linux.
 
 OpenBangla Keyboard currently has the following build dependencies:
+
 - GNU GCC 8 (or later) or Clang 7 (or later) compiler
 - Rust 1.34.0 or later
 - GNU Make or Ninja
@@ -20,11 +21,8 @@ OpenBangla Keyboard currently has the following build dependencies:
 <Steps>
 
 <Step>
-### Install Rust
-Install `Rust` using [`rustup`](https://rust-lang.org/tools/install/) by following script.
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+  ### Install Rust Install `Rust` using [`rustup`](https://rust-lang.org/tools/install/) by
+  following script. ```sh curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh ```
 </Step>
 
 <Step>
@@ -39,14 +37,14 @@ Install the rest of the dependencies for specific distribution.
 <Tab value="Ubuntu / Debian">
 
 ```sh
-sudo apt-get install build-essential cmake libibus-1.0-dev libfcitx5core-dev qtbase5-dev qtbase5-dev-tools libzstd-dev 
+sudo apt-get install build-essential cmake libibus-1.0-dev libfcitx5core-dev qtbase5-dev qtbase5-dev-tools libzstd-dev
 ```
 
 </Tab>
 <Tab value="Fedora">
 
 ```sh
-sudo dnf install @buildsys-build cmake qt5-qtdeclarative-devel ibus-devel fcitx5-devel libzstd-devel 
+sudo dnf install @buildsys-build cmake qt5-qtdeclarative-devel ibus-devel fcitx5-devel libzstd-devel
 ```
 
 </Tab>
@@ -75,15 +73,15 @@ sudo eopkg install -c system.devel qt5-base-devel ibus-devel fcitx5-devel zstd-d
 </Step>
 
 <Step>
-### Clone the Repository
+### Clone the repository
 
-After installing the required dependencies, clone the repository.
+After installing the required dependencies, clone the repository and change directory.
 
 ```sh
-# Clone the repository and navigate into the project folder
-git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git &&
 cd OpenBangla-Keyboard
 ```
+
 </Step>
 
 <Step>
@@ -102,8 +100,8 @@ In this step generate `cmake` configurations and compile using `cmake`.
 mkdir build && cd build
 cmake -DENABLE_BOTH=ON ..
 ```
-</Tab>
 
+</Tab>
 
 <Tab value="Ibus only">
 
@@ -111,6 +109,7 @@ cmake -DENABLE_BOTH=ON ..
 mkdir build && cd build
 cmake -DENABLE_IBUS=ON ..
 ```
+
 </Tab>
 
 <Tab value="Fcitx only">
@@ -119,6 +118,7 @@ cmake -DENABLE_IBUS=ON ..
 mkdir build && cd build
 cmake -DENABLE_FCITX=ON ..
 ```
+
 </Tab>
 </Tabs>
 
@@ -127,6 +127,7 @@ Afterwards, build the binaries inside the `build` directory.
 ```sh
 cmake --build .
 ```
+
 </Step>
 
 <Step>
@@ -136,6 +137,7 @@ From the build directory, just use this command
 ```sh
 sudo cmake --install .
 ```
+
 </Step>
 
 <Step>
@@ -152,14 +154,15 @@ The system needs an input method restart. A `logout` and `login` back would be t
 ```sh
 loginctl terminate-session self
 ```
-</Tab>
 
+</Tab>
 
 <Tab value="Ibus only">
 
 ```sh
 ibus restart
 ```
+
 </Tab>
 
 <Tab value="Fcitx only">
@@ -167,6 +170,7 @@ ibus restart
 ```sh
 fcitx5 -r -d
 ```
+
 </Tab>
 </Tabs>
 
@@ -176,6 +180,7 @@ fcitx5 -r -d
 ---
 
 ### TL;DR
+
 Use this Command to build and install.
 
 <Tabs
