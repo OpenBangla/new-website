@@ -167,38 +167,16 @@ sudo cmake --install .
 </Step>
 
 <Step>
+
 ### Restart Input method
-The system needs an input method restart. A `logout` and `login` back would be the best option
-<Tabs
-  groupId="custom_options"
-  persist
-  items={["Both", "IBus", "Fcitx"]}
->
 
-<Tab value="Both">
+The system needs an input method restart. A logout and login back would be the best option.
 
-```sh
-loginctl terminate-session self
-```
+<Callout title="Warning" type="warn">
 
-</Tab>
+Make sure to save your work before logging out, as all running applications will be closed.
 
-<Tab value="IBus">
-
-```sh
-ibus restart
-```
-
-</Tab>
-
-<Tab value="Fcitx">
-
-```sh
-fcitx5 -r -d
-```
-
-</Tab>
-</Tabs>
+</Callout>
 
 </Step>
 </Steps>
