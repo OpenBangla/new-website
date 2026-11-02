@@ -22,6 +22,7 @@ OpenBangla Keyboard currently has the following build dependencies:
 <Steps>
 
 <Step>
+
 ### Install Rust using rustup by following script
 
 ```sh
@@ -31,7 +32,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 </Step>
 
 <Step>
+
 ### Install Dependencies
+
 Install the rest of the dependencies for specific distribution.
 
 <Tabs
@@ -78,6 +81,7 @@ sudo eopkg install -c system.devel qt5-base-devel ibus-devel fcitx5-devel zstd-d
 </Step>
 
 <Step>
+
 ### Clone the repository
 
 After installing the required dependencies, clone the repository and change directory.
@@ -90,37 +94,54 @@ cd OpenBangla-Keyboard
 </Step>
 
 <Step>
+### Switch to the develop branch
+
+Switch to the develop branch and update submodules
+
+```sh
+git checkout develop &&
+git submodule update
+```
+
+</Step>
+
+<Step>
+
 ### Build the binaries
+
 In this step generate `cmake` configurations and compile using `cmake`.
 
 <Tabs
   groupId="custom_options"
   persist
-  items={["Default", "Ibus only", "Fcitx only"]}
+  items={["Both", "IBus", "Fcitx"]}
 >
 
-<Tab value="Default">
+<Tab value="Both">
 
 ```sh
-mkdir build && cd build
+mkdir build &&
+cd build &&
 cmake -DENABLE_BOTH=ON ..
 ```
 
 </Tab>
 
-<Tab value="Ibus only">
-
+<Tab value="IBus">
+  
 ```sh
-mkdir build && cd build
+mkdir build &&
+cd build &&
 cmake -DENABLE_IBUS=ON ..
 ```
 
 </Tab>
 
-<Tab value="Fcitx only">
+<Tab value="Fcitx">
 
 ```sh
-mkdir build && cd build
+mkdir build &&
+cd build &&
 cmake -DENABLE_FCITX=ON ..
 ```
 
@@ -151,10 +172,10 @@ The system needs an input method restart. A `logout` and `login` back would be t
 <Tabs
   groupId="custom_options"
   persist
-  items={["Default", "Ibus only", "Fcitx only"]}
+  items={["Both", "IBus", "Fcitx"]}
 >
 
-<Tab value="Default">
+<Tab value="Both">
 
 ```sh
 loginctl terminate-session self
@@ -162,7 +183,7 @@ loginctl terminate-session self
 
 </Tab>
 
-<Tab value="Ibus only">
+<Tab value="IBus">
 
 ```sh
 ibus restart
@@ -170,7 +191,7 @@ ibus restart
 
 </Tab>
 
-<Tab value="Fcitx only">
+<Tab value="Fcitx">
 
 ```sh
 fcitx5 -r -d
