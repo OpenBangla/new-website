@@ -6,7 +6,7 @@ import type { NextConfig } from "next";
 const withMDX = createMDX();
 
 const config: NextConfig = {
-  output: process.env.NODE_ENV === "production" ? "export" : undefined,
+  output: "export",
   reactStrictMode: true,
   images: { unoptimized: true },
   basePath: "/new-website",
