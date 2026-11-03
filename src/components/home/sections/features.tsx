@@ -24,7 +24,8 @@ const FEATURES = [
   {
     id: "auto-correct",
     title: "Auto Correct",
-    description: "Built with speed and responsiveness in mind for a lag-free typing experience.",
+    description:
+      "Fixes common typos on the fly and brings frequently used English words to Bangla with their original spelling.",
     icon: <AutoCorrect />,
   },
   {

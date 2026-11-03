@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import logo from "@/app/icon.svg";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const FOOTER_DATA = [
@@ -54,17 +56,22 @@ export default function Footer() {
           <div className="flex max-w-sm flex-col items-start gap-4">
             <div className="flex items-center justify-center gap-3">
               <div className="overflow-hidden rounded-xl shadow-sm">
-                <Image src="https://placehold.co/48x48" alt="placeholder" width={48} height={48} />
+                <Image
+                  src={logo}
+                  alt="OpenBangla Keyboard logo"
+                  width={48}
+                  height={48}
+                  className="rounded-xl"
+                />
               </div>
 
-              {/* Replace with actual logo Image */}
               <h3 className="font-bold font-bricolage-grotesque text-2xl text-zinc-950 dark:text-zinc-50">
                 OpenBangla
               </h3>
             </div>
             <p className="text-zinc-600 leading-relaxed dark:text-zinc-400">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque velit consectetur a,
-              placeat laudantium tempore molestiae ipsam.
+              A free and open-source Bangla keyboard for Linux, Windows, and macOS. Built by the
+              community to make Bangla typing fast, smart, and effortless.
             </p>
           </div>
 

@@ -5,20 +5,23 @@ const GET_OBK = [
   {
     id: "linux",
     title: "Linux",
-    description: "Full Windows 10/11 compatibility",
+    description: "Native support for all major distributions",
+    href: "/docs/installation/linux",
     icon: <Linux />,
   },
 
   {
     id: "mac",
-    title: "MacOS",
+    title: "macOS",
     description: "Runs smoothly on Apple Silicon & Intel",
+    href: "/docs/installation/macos",
     icon: <MacOS />,
   },
   {
     id: "windows",
     title: "Windows",
-    description: "Native support for all major distributions",
+    description: "Full Windows 10/11 compatibility",
+    href: "/docs/installation/windows",
     icon: <Windows />,
   },
 ];
@@ -41,6 +44,7 @@ export default function GetObk() {
               key={item.id}
               title={item.title}
               description={item.description}
+              href={item.href}
               icon={item.icon}
             />
           ))}

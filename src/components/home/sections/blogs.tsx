@@ -24,6 +24,7 @@ export default function Blogs() {
                 title={post.title}
                 date={formatPostDate(post.date)}
                 author={post.authors.map((a) => a.name).join(", ")}
+                authorImage={post.authors[0]?.image}
                 description={post.description ?? ""}
               />
             </Link>
