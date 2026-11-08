@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { ContributorAvatar } from "@/components/contributor-avatar";
+import { ContributorRow } from "@/components/contributor-row";
 import data from "@/data/contributors.json";
 
 export const metadata: Metadata = {
@@ -86,32 +86,14 @@ export default function ThanksPage() {
             </thead>
             <tbody>
               {rows.map((contributor) => (
-                <tr
+                <ContributorRow
                   key={contributor.key}
-                  className="border-t border-fd-border transition-colors hover:bg-fd-accent/40"
-                >
-                  <td className="px-3 py-2.5 text-right tabular-nums text-fd-muted-foreground sm:px-4">
-                    {contributor.rank}
-                  </td>
-                  <td className="px-3 py-2.5 sm:px-4">
-                    <span className="flex min-w-0 items-center gap-2.5">
-                      <ContributorAvatar
-                        name={contributor.name}
-                        login={contributor.login}
-                        avatar={contributor.avatar}
-                      />
-                      <span className="text-fd-card-foreground">{contributor.name}</span>
-                      {contributor.name.endsWith("[bot]") && (
-                        <span className="rounded border border-fd-border px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-fd-muted-foreground">
-                          bot
-                        </span>
-                      )}
-                    </span>
-                  </td>
-                  <td className="px-3 py-2.5 text-right font-medium tabular-nums text-fd-foreground sm:px-4">
-                    {contributor.commits}
-                  </td>
-                </tr>
+                  name={contributor.name}
+                  rank={contributor.rank}
+                  commits={contributor.commits}
+                  login={contributor.login}
+                  avatar={contributor.avatar}
+                />
               ))}
             </tbody>
           </table>
