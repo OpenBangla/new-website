@@ -7,6 +7,7 @@ import {
   Sparkles,
   SpellCheck,
 } from "lucide-react";
+import { LinuxIcon, MacOSIcon, WindowsIcon } from "@/components/os-icons";
 
 export const metadata = {
   title: "OpenBangla Keyboard",
@@ -40,6 +41,7 @@ const features = [
 const platforms = [
   {
     name: "Linux",
+    icon: LinuxIcon,
     status: "Available now",
     available: true,
     description:
@@ -48,6 +50,7 @@ const platforms = [
   },
   {
     name: "macOS",
+    icon: MacOSIcon,
     status: "Installer in progress",
     available: false,
     description:
@@ -56,6 +59,7 @@ const platforms = [
   },
   {
     name: "Windows",
+    icon: WindowsIcon,
     status: "Installer in progress",
     available: false,
     description:
@@ -170,7 +174,10 @@ export default function HomePage() {
                 className={`group flex h-full flex-col rounded-xl border border-fd-border bg-fd-card p-5 transition-colors hover:bg-fd-accent ${focusRing}`}
               >
                 <div className="flex items-center justify-between gap-3">
-                  <span className="font-medium">{platform.name}</span>
+                  <span className="flex items-center gap-2">
+                    <platform.icon className="h-[18px] w-auto shrink-0 text-fd-foreground" />
+                    <span className="font-medium">{platform.name}</span>
+                  </span>
                   <span
                     className={`inline-flex items-center gap-1.5 text-xs ${
                       platform.available ? "text-fd-foreground" : "text-fd-muted-foreground"
