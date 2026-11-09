@@ -1,6 +1,6 @@
 "use client";
 
-import { ContributorAvatar } from "@/components/contributor-avatar";
+import { ContributorAvatar } from "@/components/thanks/contributor-avatar";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fd-foreground";

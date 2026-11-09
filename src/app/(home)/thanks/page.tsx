@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { ContributorRow } from "@/components/contributor-row";
+import { ContributorRow } from "@/components/thanks/contributor-row";
 import data from "@/data/contributors.json";
 
 export const metadata: Metadata = {
