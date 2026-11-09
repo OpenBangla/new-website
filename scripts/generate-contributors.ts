@@ -241,10 +241,13 @@ async function listRepos(org: string, token: string): Promise<Repo[]> {
 interface ApiCommit {
   sha: string;
   author: { login: string; avatar_url: string } | null;
+  parents: { sha: string }[];
 }
 
 /**
- * GitHub accounts linked to the org's commits, keyed by commit SHA.
+ * GitHub accounts linked to the org's non-merge commits, keyed by commit SHA.
+ * Merge commits are skipped so these counts match the clone output, which uses
+ * `git log --no-merges`.
  * Best-effort: a repo whose API call fails is reported and skipped, because
  * profiles are decoration and must never cost us the commit counts.
  */
@@ -263,7 +266,7 @@ export async function collectProfiles(
   const nameWidth = Math.max(0, ...repos.map((repo) => repo.name.length));
 
   for (const repo of repos) {
-    let resolved = 0;
+    let linked = 0;
     try {
       for (let page = 1; ; page++) {
         const url =
@@ -278,15 +281,16 @@ export async function collectProfiles(
         if (batch.length === 0) break; // an empty page means we have seen everything
 
         for (const commit of batch) {
+          if (commit.parents.length > 1) continue; // merge commit: the clone skips it too
           if (!commit.author) continue;
           profiles.set(commit.sha, {
             login: commit.author.login,
             avatar: commit.author.avatar_url,
           });
-          resolved++;
+          linked++;
         }
       }
-      console.log(`  ${green("[ok]")}   ${repo.name.padEnd(nameWidth)}   ${resolved} profiles`);
+      console.log(`  ${green("[ok]")}   ${repo.name.padEnd(nameWidth)}   ${linked} linked commits`);
     } catch (error) {
       console.log(
         `  ${yellow("[warn]")} ${repo.name.padEnd(nameWidth)}   ` +
@@ -443,10 +447,10 @@ function suggestMailmapLines(people: Person[]): string[] {
   return lines;
 }
 
-/** Asks for a 96px image so 48px displays stay sharp on high-density screens. */
+/** Asks for a 48px image so 24px displays stay sharp on 2x screens. */
 export function normalizeAvatarUrl(url: string): string {
   const normalized = new URL(url);
-  normalized.searchParams.set("s", "96");
+  normalized.searchParams.set("s", "48");
   return normalized.toString();
 }
 

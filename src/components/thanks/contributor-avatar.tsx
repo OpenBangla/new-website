@@ -17,14 +17,7 @@ function initials(name: string) {
  * A contributor's GitHub avatar over their initials. The initials render first
  * so a missing profile or a failed image request still leaves a readable badge.
  */
-export function ContributorAvatar({
-  name,
-  avatar,
-}: {
-  name: string;
-  login?: string;
-  avatar?: string;
-}) {
+export function ContributorAvatar({ name, avatar }: { name: string; avatar?: string }) {
   const [failed, setFailed] = useState(false);
 
   return (

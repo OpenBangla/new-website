@@ -42,7 +42,7 @@ export default function ThanksPage() {
   ] as const;
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-12 sm:py-16">
+    <div className="mx-auto w-full max-w-(--fd-layout-width) px-4 py-12 sm:py-16">
       <header>
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Thanks</h1>
         <p className="mt-3 text-lg text-fd-muted-foreground">All-time OpenBangla contributors</p>
